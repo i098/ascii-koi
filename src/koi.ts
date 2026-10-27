@@ -1,5 +1,5 @@
-// Koi and lily pads over an ascii-pond: koi swim in from the edges, loiter, flee the cursor
-// and leave wakes in the water. Pure math and typed arrays, no DOM. Inputs are CELL space
+// Koi and lily pads over an ascii-pond: koi swim in from the edges, loiter and leave
+// wakes in the water; the pond steers them away from the pointer. Pure math and typed arrays, no DOM. Inputs are CELL space
 // (cols/rows); the koi raster is two pixel rows per cell (half-block), converted internally.
 import { Pond } from "ascii-pond";
 import type { Glyph, Scene } from "ascii-pond";
@@ -173,7 +173,7 @@ export class KoiSim implements Scene {
   get field(): Float32Array {
     return this.pond.field;
   }
-  // cursor cell: koi flee it
+  // pointer cell, stored on the pond, which steers the koi away from it
   get mouse(): { x: number; y: number } | null {
     return this.pond.mouse;
   }
@@ -247,7 +247,6 @@ export class KoiSim implements Scene {
     const n = Math.min(deltaMs, 100) / 33;
     const dtMs = Math.min(deltaMs, 100);
     const ease = 1 - Math.pow(0.84, n); // 0.16 per 33ms tick
-    const m = this.pond.mouse;
     for (const k of this.koi) {
       // rest state: real koi loiter. The lead point all but stops (s creeps at 15%, so
       // fins/tail keep a slow sway and the body drifts), then wandering resumes.
@@ -264,17 +263,7 @@ export class KoiSim implements Scene {
       }
       const target = leadFor(k, k.s);
       const head = k.spine[0];
-      if (m) {
-        const dx = head.x - m.x;
-        const dy = head.y - m.y * 2;
-        const d = Math.hypot(dx, dy);
-        if (d < 24 && d > 0.001) {
-          k.rest = 0; // startled — dart, don't loiter
-          const f = (24 - d) * 0.5;
-          target.x += (dx / d) * f;
-          target.y += (dy / d) * f;
-        }
-      }
+      if (this.pond.steer(target, head.x, head.y)) k.rest = 0; // startled by the pointer — dart, don't loiter
       // separation: steer away from the nearest part of every other koi
       for (const o of this.koi) {
         if (o === k || o.spine.length === 0) continue;

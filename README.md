@@ -16,8 +16,8 @@
 
 ![Two ASCII koi under lily pads, with ripples from the pointer](docs/demo.png)
 
-ASCII koi fish swimming in an ASCII pond on a canvas. They glide in from the edges, rest, flee the cursor, and leave wakes in the water.
-No framework. The water comes from [ascii-pond](https://github.com/i098/ascii-pond).
+ASCII koi fish swimming in an ASCII pond on a canvas. They glide in from the edges, rest, and leave wakes in the water.
+No framework. The water comes from [ascii-pond](https://github.com/i098/ascii-pond), and the pond does the pointer work: it makes the ripples and steers the koi away from the pointer.
 
 ## Install
 
@@ -38,7 +38,7 @@ koi.destroy();
 `mountKoi(target, options)` takes a `<canvas>` or any element. For an element, it adds a canvas that fills the element.
 
 - The grid follows the size of the box. A resize starts a new pond, and the koi swim in again.
-- Pointer moves and clicks make ripples, and the koi swim away from the pointer.
+- The pond handles the pointer: moves and clicks make ripples, and the pond steers the koi away from it.
 - Drawing stops while the canvas is off-screen or the tab is hidden.
 - With `prefers-reduced-motion: reduce`, it draws one still frame and ignores the pointer.
 

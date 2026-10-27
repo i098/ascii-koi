@@ -1,7 +1,7 @@
 {
   "name": "ascii-koi",
   "version": "0.1.1",
-  "description": "ASCII koi fish swimming in an ASCII pond on a canvas. They flee the cursor and leave wakes. Framework-free.",
+  "description": "ASCII koi fish swimming in an ASCII pond on a canvas. They leave wakes, and the pond steers them away from the pointer. Framework-free.",
   "license": "Apache-2.0",
   "author": "Jerry Xiao",
   "repository": {
@@ -40,6 +40,6 @@
     "typescript": "^5.6.0"
   },
   "dependencies": {
-    "ascii-pond": "^0.1.0"
+    "ascii-pond": "^0.1.1"
   }
 }
