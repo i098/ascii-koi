@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ascii-koi demo</title>
+  <style>html, body { margin: 0; height: 100%; background: #030c0d; } #pond { position: fixed; inset: 0; }</style>
+</head>
+<body>
+  <div id="pond"></div>
+  <script type="importmap">{ "imports": { "ascii-pond": "../node_modules/ascii-pond/dist/index.js" } }</script>
+  <script type="module">
+    import { mountKoi } from "../dist/index.js";
+    mountKoi(document.getElementById("pond"));
+  </script>
+</body>
+</html>

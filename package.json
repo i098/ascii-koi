@@ -1,0 +1,45 @@
+{
+  "name": "ascii-koi",
+  "version": "0.1.0",
+  "description": "ASCII koi fish swimming in an ASCII pond on a canvas. They flee the cursor and leave wakes. Framework-free.",
+  "license": "Apache-2.0",
+  "author": "Jerry Xiao",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i098/ascii-koi.git"
+  },
+  "homepage": "https://github.com/i098/ascii-koi#readme",
+  "bugs": "https://github.com/i098/ascii-koi/issues",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "ascii",
+    "koi",
+    "fish",
+    "pond",
+    "canvas",
+    "animation"
+  ],
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "ascii-pond": "^0.1.0"
+  }
+}
