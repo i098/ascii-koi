@@ -1,6 +1,6 @@
 {
   "name": "ascii-koi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ASCII koi fish swimming in an ASCII pond on a canvas. They flee the cursor and leave wakes. Framework-free.",
   "license": "Apache-2.0",
   "author": "Jerry Xiao",

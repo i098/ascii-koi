@@ -1,5 +1,19 @@
 # ascii-koi
 
+```
+  *
+  ##
+***##**
+*****####****** ***##*#####******
+           ****###################*
+                **###################**
+                    **#######################•#*
+                        **#####################*
+                             ***#################*
+                                  *****    ***
+                                *
+```
+
 ![Two ASCII koi under lily pads, with ripples from the pointer](docs/demo.png)
 
 ASCII koi fish swimming in an ASCII pond on a canvas. They glide in from the edges, rest, flee the cursor, and leave wakes in the water.
