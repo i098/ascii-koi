@@ -38,7 +38,7 @@ koi.destroy();
 
 The options are the same as for `mountPond` in [ascii-pond](https://github.com/i098/ascii-pond#usage), except `scene`.
 
-### Terminal ASCII fish animation (no canvas)
+### ASCII fish simulation without the canvas
 
 `KoiSim` is the simulation alone (typed arrays, no DOM), for terminals or your own renderer:
 
