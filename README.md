@@ -7,7 +7,7 @@
 
 Originally from [xiao.sh](https://x.com/inperspicuous/status/2077676490234224845).
 
-ASCII koi fish swimming in an ASCII pond on a canvas. They glide in from the edges, rest, and leave wakes in the water.
+**ascii-koi** is an ASCII koi fish animation: ASCII koi fish swim in an ASCII pond on a canvas. They glide in from the edges, rest, and leave wakes in the water.
 No framework. The water comes from [ascii-pond](https://github.com/i098/ascii-pond), and the pond does the pointer work: it steers the koi away from the pointer.
 The water stays clear by default; pass `ripples: true` to draw the waves.
 
@@ -38,7 +38,7 @@ koi.destroy();
 
 The options are the same as for `mountPond` in [ascii-pond](https://github.com/i098/ascii-pond#usage), except `scene`.
 
-### The engine without the canvas
+### ASCII fish simulation without the canvas
 
 `KoiSim` is the simulation alone (typed arrays, no DOM), for terminals or your own renderer:
 
